@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.repositories;
 
 import com.example.demo.model.Song;
 import org.springframework.stereotype.Repository;
@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository("fakeDao")
-public class SongDAOImpl implements SongDAO {
+@Repository("fake")
+public class SongRepositoryImpl implements SongRepository {
 
     private static List<Song> DB = new ArrayList<>();
 

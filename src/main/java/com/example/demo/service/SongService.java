@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.dao.SongDAO;
+import com.example.demo.repositories.SongRepository;
 import com.example.demo.model.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,30 +13,30 @@ import java.util.UUID;
 @Service
 public class SongService {
 
-    private final SongDAO songDao;
+    private final SongRepository songRepository;
 
     @Autowired
-    public SongService(@Qualifier("fakeDao") SongDAO songDao) {
-        this.songDao = songDao;
+    public SongService(@Qualifier("fake") SongRepository songRepository) {
+        this.songRepository = songRepository;
     }
 
     public int addSong(Song song) {
-        return songDao.insertSong(song);
+        return songRepository.insertSong(song);
     }
 
     public List<Song> getAllSong() {
-        return songDao.selectAllSong();
+        return songRepository.selectAllSong();
     }
 
     public Optional<Song> getSongById(UUID id) {
-        return songDao.selectSongById(id);
+        return songRepository.selectSongById(id);
     }
 
     public int deleteSong(UUID id) {
-        return songDao.deleteSongById(id);
+        return songRepository.deleteSongById(id);
     }
 
     public int updateSong(UUID id, Song newSong) {
-        return songDao.updateSongById(id, newSong);
+        return songRepository.updateSongById(id, newSong);
     }
 }

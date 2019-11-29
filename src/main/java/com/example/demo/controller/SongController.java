@@ -14,7 +14,7 @@ import java.util.UUID;
 @RestController
 public class SongController {
 
-    private final SongService songService;
+    private SongService songService;
 
     @Autowired
     public SongController(SongService songService) {

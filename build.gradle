@@ -17,8 +17,11 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	testCompile 'junit:junit:4.12'
 }
 
 test {
+	systemProperty 'de.adesso.junitinsights.enabled', 'true'
+	systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
 	useJUnitPlatform()
 }
