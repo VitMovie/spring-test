@@ -20,6 +20,7 @@ public class SongService {
         this.songRepository = songRepository;
     }
 
+
     public int addSong(Song song) {
         return songRepository.insertSong(song);
     }
@@ -38,5 +39,9 @@ public class SongService {
 
     public int updateSong(UUID id, Song newSong) {
         return songRepository.updateSongById(id, newSong);
+    }
+
+    public int count() {
+        return this.songRepository.count();
     }
 }

@@ -22,4 +22,6 @@ public interface SongRepository {
     int deleteSongById(UUID id);
 
     int updateSongById(UUID id, Song song);
+
+    int count();
 }

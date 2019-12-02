@@ -19,6 +19,10 @@ public class SongRepositoryImpl implements SongRepository {
         return 0;
     }
 
+    public int count() {
+        return this.DB.size();
+    }
+
     @Override
     public List<Song> selectAllSong() {
         return DB;
